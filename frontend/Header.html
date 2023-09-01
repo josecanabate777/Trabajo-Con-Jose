@@ -1,0 +1,21 @@
+//<script type="text/jsx">
+
+    function Header() {
+      return (
+        <div>
+          <nav className="navbar navbar-expand-lg bg-body-secondary border-bottom">
+            <div className="container-fluid">
+                <span className="p-2 bg-dark text-white rounded-start-pill box-shadow-inset" style={{fontSize: '1.2rem'}}>PLAN ESTRATÉGICO 2023</span>
+                <div className="p-2">
+                  <NavLink exact activeClassName="bg-success" className="navbar-brand badge bg-primary text-white p-2 mt-2" style={{fontSize: '1rem'}} to="/"> APRENDIZAJE Y CRECIMIENTO </NavLink>
+                  <NavLink exact activeClassName="bg-success" className="navbar-brand badge bg-primary text-white p-2 mt-2" style={{fontSize: '1rem'}} to="/proceso"> PROCESOS </NavLink>
+                  <NavLink exact activeClassName="bg-success" className="navbar-brand badge bg-primary text-white p-2 mt-2" style={{fontSize: '1rem'}} to="/finanzas"> FINANZAS </NavLink>
+                  <NavLink exact activeClassName="bg-success" className="navbar-brand badge bg-primary text-white p-2 mt-2" style={{fontSize: '1rem'}} to="/cliente"> CLIENTE </NavLink>
+             </div>
+            </div>
+          </nav>
+        </div>
+      )
+    }
+    
+// </script>

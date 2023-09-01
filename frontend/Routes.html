@@ -1,0 +1,18 @@
+//<script type="text/jsx">
+
+function Routes() {
+    return(
+        <Router>
+            <Header />
+            <Redirect to="/"/>
+            <Switch>
+                <Route exact path="/" component={apcreci}/>
+                <Route exact path="/proceso" component={proceso}/>
+                <Route exact path="/finanzas" component={finanzas}/>
+                <Route exact path="/cliente"  component={cliente}/>
+             
+            </Switch>
+        </Router>
+    );
+}
+//</script>

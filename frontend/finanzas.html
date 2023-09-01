@@ -1,0 +1,58 @@
+//<script type="text/jsx">
+
+    const finanzas = () => {
+        useEffect(listar, [])
+        const [dataSource, setdataSource] = useState([])
+
+        async function listar() {
+            await google.script.run.withSuccessHandler(res => {
+                const respuest = JSON.parse(res);          
+                let arreglo = [];
+                respuest
+                    .map(data => {
+                    if(data.enfoque === "FINANZAS")
+                    arreglo.push({...data})
+                }) 
+                setdataSource(arreglo)
+               }).listar();
+        }   
+        return (
+            <div className="container-xxl shadow p-3 mb-5 rounded" style={{"marginTop": '2rem'}}>
+                <div className="row g-2">
+                    <div className="col-4">
+                        <div className="input-group input-group-sm mb-3 border-danger-subtle">
+                            <span className="input-group-text bg-warning">Enfoque</span>
+                            <span className="form-control">Finanzas</span>
+                        </div>
+                    </div>
+                    
+                </div>    
+            <table className="table table-bordered" style={{"marginBottom": '1rem'}}>
+                <thead >
+                    <tr>
+                        <th scope="col" className="bg-dark text-white text-center">Objetivo</th>
+                        <th scope="col" className="bg-dark text-white text-center">Responsable</th>
+                        <th scope="col" className="bg-dark text-white text-center">Indicador</th>
+                        <th scope="col" className="bg-dark text-white text-center">Meta</th>
+                        <th scope="col" className="bg-dark text-white text-center">Tiempo de Cierre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {dataSource
+                        .map((datos) => ( 
+                    <tr key={datos.id}>
+                        <td className="bg-light">{datos.objetivo}</td>
+                        <td>{datos.responsable}</td>
+                        <td>{datos.indicador}</td>
+                        <td>{datos.meta}</td>
+                        <td>{datos.tiempocierre}</td>
+                    </tr>
+                    ))}
+                </tbody>
+          </table>
+        </div>
+        )
+    }
+
+
+//</script>

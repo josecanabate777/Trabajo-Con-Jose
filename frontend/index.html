@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?!= include('frontend/config/cd')?>
+    <title>SGE</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+    <components style="display: none;">
+        <?!= include('frontend/config/constCd')?>
+        <?!= include('frontend/Header')?>
+        <?!= include('frontend/Routes')?>
+
+        <?!= include('frontend/apcreci')?>
+        <?!= include('frontend/proceso')?>
+        <?!= include('frontend/finanzas')?>
+        <?!= include('frontend/cliente')?>
+
+        <?!= include('frontend/App')?>
+    </components>
+</html>
